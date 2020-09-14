@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a>
+    </div>
+  </div> 
+
+</br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<h3><b>Latest Mars News</b></h3>
+          <h4 class="heading">{{mars_data.news_title[0]}}</h4>
+          <p>{{mars_data.news_p}}</p>
+				</div>
+				<div class="col-md-6">
+					<h3><b>Featured Mars Image</b></h3>
+          <img src="{{mars_data.featured_image}}" alt="Featured Mars Image">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+          <div class="table-responsive">
+            <table class="table">
+              {{mars_data.mars_specs}}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</br>
+
+<h3><b>Mars Hemispheres</b></h3>
+<div class="row">
+  <div class="col-md-6 border">
+    <h4>{{mars_data.mars_hem_names[0]}}</h4>
+    <img alt="Hem 1" src="{{ mars_data.mars_hem_links[0] }}">
+  </div>
+  <div class="col-md-6">
+    <h4>{{mars_data.mars_hem_names[1]}}</h4>
+    <img alt="Hem 2" src="{{ mars_data.mars_hem_links[1] }}">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4>{{mars_data.mars_hem_names[2]}}</h4>
+    <img alt="Hem 3" src="{{ mars_data.mars_hem_links[2] }}">
+  </div>
+  <div class="col-md-6">
+    <h4>{{mars_data.mars_hem_names[3]}}</h4>
+    <img alt="Hem 4" src="{{ mars_data.mars_hem_links[3] }}">
+  </div>
+</div>
+        
+
+</body>
+
+</html>
