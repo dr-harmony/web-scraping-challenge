@@ -117,8 +117,7 @@ def scrape():
     soup = bs(html, 'lxml')
     results = soup.find_all('div', class_='content')
 
-    for o in results:
-        full_im1_link = browser.links.find_by_partial_text('Sample')['href']
+    full_im1_link = browser.links.find_by_partial_text('Sample')['href']
     
     # Hemisphere 2
     browser.visit(image_links[1])
@@ -127,8 +126,7 @@ def scrape():
     soup = bs(html, 'lxml')
     results = soup.find_all('div', class_='content')
 
-    for o in results:
-        full_im2_link = browser.links.find_by_partial_text('Sample')['href']
+    full_im2_link = browser.links.find_by_partial_text('Sample')['href']
 
     # Hemisphere 3
     browser.visit(image_links[2])
@@ -137,8 +135,7 @@ def scrape():
     soup = bs(html, 'lxml')
     results = soup.find_all('div', class_='content')
 
-    for o in results:
-        full_im3_link = browser.links.find_by_partial_text('Sample')['href']
+    full_im3_link = browser.links.find_by_partial_text('Sample')['href']
 
     # Hemisphere 4
     browser.visit(image_links[3])
@@ -147,8 +144,7 @@ def scrape():
     soup = bs(html, 'lxml')
     results = soup.find_all('div', class_='content')
 
-    for o in results:
-        full_im4_link = browser.links.find_by_partial_text('Sample')['href']
+    full_im4_link = browser.links.find_by_partial_text('Sample')['href']
 
 ###################################
 #Storing everything in a dictionary
@@ -161,6 +157,8 @@ def scrape():
        "mars_hem_names": image_titles,
        "mars_hem_links": [full_im1_link, full_im2_link, full_im3_link, full_im4_link]
     }
+
+    browser.quit()
 
     return mars_data
 

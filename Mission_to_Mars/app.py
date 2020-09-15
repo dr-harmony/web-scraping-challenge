@@ -16,6 +16,20 @@ def index():
     # Find all records of data from the mongo database
     mars_data = mongo.db.scraped.find_one()
 
+    # # fills database incase it is empty (runs only on first run)
+    # if mars_data is None:
+    #     mars_scrape = {
+    #     "news_title": [""],
+    #     "news_p": [""],
+    #     "featured_image": "",
+    #     "mars_specs": "",
+    #     "mars_hem_names": ["", "", "", ""],
+    #     "mars_hem_links": ["", "", "", ""]
+    #     }
+        
+    #     mongo.db.scraped.update({}, mars_scrape, upsert=True)
+    #     mars_data = mongo.db.scraped.find_one()
+
     # Return template and data
     return render_template("index.html", mars_data = mars_data)
 
